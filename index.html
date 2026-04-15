@@ -4,26 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TCG LOG — トレカ情報まとめサイト</title>
-  <meta name="description" content="ポケモンカード・遊戯王・MTG・ワンピースカードなど、トレーディングカードゲームの最新情報・相場・リーク情報を毎日まとめています。">
+  <meta name="description" content="ポケカ・遊戯王・MTG・ワンピースカードなど、トレカの最新情報を9:00・15:00・21:00に整理して届けるまとめサイト。">
   <meta name="keywords" content="トレカ,ポケモンカード,遊戯王,MTG,ワンピースカード,相場,まとめ,リーク">
-
-  <!-- OGP -->
   <meta property="og:title" content="TCG LOG — トレカ情報まとめサイト">
-  <meta property="og:description" content="ポケカ・遊戯王・MTGなどトレカの最新情報を毎日まとめています。">
+  <meta property="og:description" content="ポケカ・遊戯王・MTGなどトレカの最新情報を9:00・15:00・21:00に更新。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tcglog.jp/">
   <meta property="og:image" content="https://tcglog.jp/assets/ogp.png">
   <meta property="og:site_name" content="TCG LOG">
   <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Canonical -->
   <link rel="canonical" href="https://tcglog.jp/">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<!-- ヘッダー -->
 <header class="site-header">
   <div class="container">
     <div class="header-inner">
@@ -33,245 +26,222 @@
       </a>
       <nav class="header-nav">
         <a href="/">トップ</a>
-        <a href="/articles/">記事一覧</a>
+        <a href="#latest">最新まとめ</a>
+        <a href="#genres">ジャンル別</a>
         <a href="#about">このサイトについて</a>
       </nav>
     </div>
   </div>
 </header>
 
-<!-- 速報バー -->
-<div class="latest-bar">
-  <div class="container">
-    <div class="latest-bar-inner">
-      <span class="latest-label">NEW</span>
-      <span class="latest-text">【21:00まとめ】ピカチュウex SA新高値・遊戯王新弾情報・デュエマ殿堂予告など本日のトレカ情報をまとめました</span>
-    </div>
+<div class="headline-bar">
+  <div class="container headline-inner">
+    <span class="headline-chip">LATEST</span>
+    <a class="headline-link" href="articles/summary-20240413-2100.html">【21:00まとめ】ピカチュウex SA新高値・遊戯王新弾情報・デュエマ発表予告などを更新</a>
   </div>
 </div>
 
-<!-- メインコンテンツ -->
 <main>
-  <div class="container">
-
-    <!-- ヒーロー -->
-    <section class="hero">
-      <h1 class="hero-title">TCG <span>LOG</span></h1>
-      <p class="hero-desc">ポケカ・遊戯王・MTG・ワンピースカードなどトレカの最新情報・相場・リーク情報を毎日まとめています。定時7・10・12・15・18・21・24時に更新。</p>
+  <div class="container main-shell">
+    <section class="hero-block">
+      <div class="hero-copy">
+        <p class="eyebrow">TCG NEWS CURATED</p>
+        <h1 class="hero-title">今日のトレカ情報を、<br>ひと目で追える形に。</h1>
+        <p class="hero-desc">ポケカ・遊戯王・MTG・ワンピースカード・デュエマの動きを、朝・昼・夜の3回に整理して掲載します。更新予定時刻は <strong>9:00 / 15:00 / 21:00</strong> です。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#latest">最新まとめを見る</a>
+          <a class="btn btn-secondary" href="#genres">ジャンル別に見る</a>
+        </div>
+      </div>
+      <div class="status-panel">
+        <div class="status-card">
+          <div class="status-label">更新ステータス</div>
+          <div id="update-status-text" class="status-main">本日の更新判定を読み込み中…</div>
+          <div id="update-status-sub" class="status-sub">自動更新スケジュール: 9:00 / 15:00 / 21:00</div>
+        </div>
+        <div class="status-card muted">
+          <div class="status-label">この表示について</div>
+          <div class="status-list">
+            <div>・表示だけで「更新済み」を偽装しません</div>
+            <div>・最終反映時刻はデータファイルから表示</div>
+            <div>・次回予定時刻を明示します</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <div class="page-layout">
-
-      <!-- 記事一覧 -->
-      <div class="main-content">
-
-        <!-- フィルター -->
-        <div class="filter-bar">
-          <button class="filter-btn active" data-genre="all">すべて</button>
-          <button class="filter-btn" data-genre="pokeka">ポケカ</button>
-          <button class="filter-btn" data-genre="yugioh">遊戯王</button>
-          <button class="filter-btn" data-genre="onepiece">ワンピース</button>
-          <button class="filter-btn" data-genre="mtg">MTG</button>
-          <button class="filter-btn" data-genre="duema">デュエマ</button>
-          <button class="filter-btn" data-genre="summary">まとめ</button>
+    <section id="latest" class="featured-section">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">MAIN FEATURE</p>
+          <h2>まずはこれを読めばOK</h2>
         </div>
-
-        <!-- 記事カード一覧 -->
-        <div class="articles-grid" id="articles-grid">
-
-          <!-- 定時まとめ（ピン留め） -->
-          <a href="articles/summary-20240413-2100.html" class="article-card pinned" data-genre="summary">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-summary">定時まとめ</span>
-                <span class="card-date">2024/04/13 21:00</span>
-              </div>
-              <div class="card-title">【21:00まとめ】本日のトレカ全ジャンル情報まとめ（4/13）</div>
-              <div class="card-excerpt">ピカチュウex SAが新高値更新・遊戯王INFINITE FORBIDDEN収録リスト流出疑惑・ワンピカードOP-08相場下落・デュエマ公式が明日の重大発表を予告・MTG撤退デマに注意</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">ポケカ</span>
-                <span class="tag">遊戯王</span>
-                <span class="tag">ワンピース</span>
-                <span class="tag">デュエマ</span>
-                <span class="tag">MTG</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-          <!-- ポケカ記事 -->
-          <a href="articles/pokeka-20240413.html" class="article-card" data-genre="pokeka">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-pokeka">ポケカ</span>
-                <span class="card-date">2024/04/13 18:30</span>
-              </div>
-              <div class="card-title">ピカチュウex SA 相場が12〜15万円台に上昇——原因と今後の見通し</div>
-              <div class="card-excerpt">複数の買取・販売サイトでピカチュウex SAの価格が先週比+18%を記録。海外需要の増加と国内在庫の逼迫が主因とみられる。</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">相場</span>
-                <span class="tag">SA</span>
-                <span class="tag">価格上昇</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-          <!-- 遊戯王記事 -->
-          <a href="articles/yugioh-20240413.html" class="article-card" data-genre="yugioh">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-yugioh">遊戯王</span>
-                <span class="card-date">2024/04/13 15:00</span>
-              </div>
-              <div class="card-title">「INFINITE FORBIDDEN」収録リスト一部流出か——真偽確認まとめ</div>
-              <div class="card-excerpt">SNS上で次弾の収録カードリストが流出したとする情報が拡散中。公式は現時点で未確認。信頼度・情報源の分析を行った。</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">新弾</span>
-                <span class="tag">リーク</span>
-                <span class="tag">真偽確認</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-          <!-- ワンピカード記事 -->
-          <a href="articles/onepiece-20240413.html" class="article-card" data-genre="onepiece">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-onepiece">ワンピース</span>
-                <span class="card-date">2024/04/13 12:00</span>
-              </div>
-              <div class="card-title">ワンピカード OP-08 SR「ルフィ・ギア5」が先週比-8%——相場動向レポート</div>
-              <div class="card-excerpt">海外版の大量入荷による需給緩和が主因。国内需要は底堅いが、短期的な下落傾向が続く可能性。各SRの価格一覧も掲載。</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">相場</span>
-                <span class="tag">OP-08</span>
-                <span class="tag">SR</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-          <!-- デュエマ記事 -->
-          <a href="articles/duema-20240413.html" class="article-card" data-genre="duema">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-duema">デュエマ</span>
-                <span class="card-date">2024/04/13 10:00</span>
-              </div>
-              <div class="card-title">デュエルマスターズ公式が「重大発表」を予告——殿堂改定か新シリーズ発表か</div>
-              <div class="card-excerpt">公式Xが明日4/14 12:00より新展開発表配信を予告。コミュニティでは殿堂改定および新シリーズ情報の公開が予想されている。</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">公式発表</span>
-                <span class="tag">殿堂</span>
-                <span class="tag">新シリーズ</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-          <!-- MTG記事 -->
-          <a href="articles/mtg-20240413.html" class="article-card" data-genre="mtg">
-            <div class="card-inner">
-              <div class="card-meta">
-                <span class="card-genre genre-mtg">MTG</span>
-                <span class="card-date">2024/04/13 07:00</span>
-              </div>
-              <div class="card-title">【デマ注意】「MTG日本撤退」の誤情報が拡散——ウィザーズが公式否定</div>
-              <div class="card-excerpt">一部SNSで拡散している「マジック：ザ・ギャザリングが日本市場から撤退する」という情報は誤りです。公式アカウントが明確に否定しています。</div>
-            </div>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">デマ注意</span>
-                <span class="tag">公式否定</span>
-              </div>
-              <span class="card-read">続きを読む →</span>
-            </div>
-          </a>
-
-        </div><!-- /articles-grid -->
+        <a href="articles/summary-20240413-2100.html" class="section-link">最新まとめへ →</a>
       </div>
 
-      <!-- サイドバー -->
-      <aside class="sidebar">
-
-        <!-- 更新スケジュール -->
-        <div class="widget">
-          <div class="widget-title">本日の更新スケジュール</div>
-          <div class="widget-body">
-            <div class="schedule-list" id="schedule-list"></div>
-          </div>
+      <a href="articles/summary-20240413-2100.html" class="featured-card">
+        <div class="featured-badge-row">
+          <span class="card-genre genre-summary">最新まとめ</span>
+          <span class="featured-time">2024/04/13 21:00</span>
         </div>
+        <h3 class="featured-title">【21:00まとめ】本日のトレカ全ジャンル情報まとめ（4/13）</h3>
+        <p class="featured-text">ピカチュウex SAの高値更新、遊戯王「INFINITE FORBIDDEN」情報、OP-08の相場変動、デュエマの予告、MTG関連デマ注意をひとつに整理。</p>
+        <div class="featured-points">
+          <span class="tag">ポケカ</span>
+          <span class="tag">遊戯王</span>
+          <span class="tag">ワンピース</span>
+          <span class="tag">デュエマ</span>
+          <span class="tag">MTG</span>
+        </div>
+      </a>
+    </section>
 
-        <!-- トレンド -->
-        <div class="widget">
-          <div class="widget-title">本日のトレンド</div>
-          <div class="widget-body">
-            <div class="trend-list">
-              <div class="trend-item">
-                <span class="trend-rank top">1</span>
-                <span class="trend-name">ピカチュウex SA</span>
-                <span class="trend-count">2.4k</span>
-              </div>
-              <div class="trend-item">
-                <span class="trend-rank top">2</span>
-                <span class="trend-name">INFINITE FORBIDDEN</span>
-                <span class="trend-count">1.8k</span>
-              </div>
-              <div class="trend-item">
-                <span class="trend-rank top">3</span>
-                <span class="trend-name">ワンピカードOP-08</span>
-                <span class="trend-count">1.2k</span>
-              </div>
-              <div class="trend-item">
-                <span class="trend-rank">4</span>
-                <span class="trend-name">デュエマ殿堂</span>
-                <span class="trend-count">980</span>
-              </div>
-              <div class="trend-item">
-                <span class="trend-rank">5</span>
-                <span class="trend-name">スカーレットex</span>
-                <span class="trend-count">870</span>
-              </div>
+    <section id="genres" class="pickup-section">
+      <div class="section-head compact">
+        <div>
+          <p class="section-kicker">PICKUPS</p>
+          <h2>ジャンル別の注目記事</h2>
+        </div>
+      </div>
+
+      <div class="pickup-grid">
+        <a href="articles/pokeka-20240413.html" class="pickup-card">
+          <span class="card-genre genre-pokeka">ポケカ</span>
+          <h3>ピカチュウex SA 相場が12〜15万円台に上昇</h3>
+          <p>先週比+18%。海外需要と国内在庫の薄さが上昇要因。</p>
+        </a>
+
+        <a href="articles/yugioh-20240413.html" class="pickup-card">
+          <span class="card-genre genre-yugioh">遊戯王</span>
+          <h3>「INFINITE FORBIDDEN」収録リスト一部流出か</h3>
+          <p>未確認情報を整理。真偽が割れている投稿を切り分け。</p>
+        </a>
+
+        <a href="articles/onepiece-20240413.html" class="pickup-card">
+          <span class="card-genre genre-onepiece">ワンピース</span>
+          <h3>OP-08「ルフィ・ギア5」が先週比-8%</h3>
+          <p>大量入荷の影響で相場がやや軟化。短期動向を確認。</p>
+        </a>
+
+        <a href="articles/duema-20240413.html" class="pickup-card">
+          <span class="card-genre genre-duema">デュエマ</span>
+          <h3>公式が「重大発表」を予告</h3>
+          <p>殿堂改定か新シリーズか。配信前に観測点を整理。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="feed-section">
+      <div class="section-head compact">
+        <div>
+          <p class="section-kicker">LATEST FEED</p>
+          <h2>新着記事一覧</h2>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-genre="all">すべて</button>
+        <button class="filter-btn" data-genre="summary">まとめ</button>
+        <button class="filter-btn" data-genre="pokeka">ポケカ</button>
+        <button class="filter-btn" data-genre="yugioh">遊戯王</button>
+        <button class="filter-btn" data-genre="onepiece">ワンピース</button>
+        <button class="filter-btn" data-genre="mtg">MTG</button>
+        <button class="filter-btn" data-genre="duema">デュエマ</button>
+      </div>
+
+      <div class="articles-grid" id="articles-grid">
+        <a href="articles/summary-20240413-2100.html" class="article-card pinned" data-genre="summary">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-summary">定時まとめ</span>
+              <span class="card-date">2024/04/13 21:00</span>
             </div>
+            <div class="card-title">【21:00まとめ】本日のトレカ全ジャンル情報まとめ（4/13）</div>
+            <div class="card-excerpt">今日の大きな動きを一気に追いたい人向け。全ジャンル横断の要点整理。</div>
           </div>
-        </div>
+        </a>
 
-        <!-- このサイトについて -->
-        <div class="widget" id="about">
-          <div class="widget-title">このサイトについて</div>
-          <div class="widget-body" style="font-size:12px;color:var(--muted);line-height:1.8">
-            <p>TCG LOGは、ポケカ・遊戯王・MTG・ワンピースカード・デュエルマスターズなどのトレーディングカードゲームに関する情報を毎日まとめているサイトです。</p>
-            <br>
-            <p>情報の真偽確認を行い、できる限り1次情報・公式情報を優先して掲載しています。</p>
-            <br>
-            <p style="color:var(--accent2)">※掲載情報は収集時点のものです。投資・売買の判断はご自身の責任でお願いします。</p>
+        <a href="articles/pokeka-20240413.html" class="article-card" data-genre="pokeka">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-pokeka">ポケカ</span>
+              <span class="card-date">2024/04/13 18:30</span>
+            </div>
+            <div class="card-title">ピカチュウex SA 相場が12〜15万円台に上昇</div>
+            <div class="card-excerpt">複数サイトで上昇を確認。海外需要と在庫薄が主因。</div>
           </div>
-        </div>
+        </a>
 
-      </aside>
-    </div>
+        <a href="articles/yugioh-20240413.html" class="article-card" data-genre="yugioh">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-yugioh">遊戯王</span>
+              <span class="card-date">2024/04/13 15:00</span>
+            </div>
+            <div class="card-title">「INFINITE FORBIDDEN」収録リスト一部流出か</div>
+            <div class="card-excerpt">未確認情報の真偽を整理。矛盾点と注意点を確認。</div>
+          </div>
+        </a>
+
+        <a href="articles/onepiece-20240413.html" class="article-card" data-genre="onepiece">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-onepiece">ワンピース</span>
+              <span class="card-date">2024/04/13 12:00</span>
+            </div>
+            <div class="card-title">ワンピカード OP-08「ルフィ・ギア5」が先週比-8%</div>
+            <div class="card-excerpt">大量入荷の影響で需給が緩和。短期的な相場下落に注目。</div>
+          </div>
+        </a>
+
+        <a href="articles/duema-20240413.html" class="article-card" data-genre="duema">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-duema">デュエマ</span>
+              <span class="card-date">2024/04/13 10:00</span>
+            </div>
+            <div class="card-title">デュエルマスターズ公式が「重大発表」を予告</div>
+            <div class="card-excerpt">配信前に観測ポイントを整理。殿堂改定か新展開か。</div>
+          </div>
+        </a>
+
+        <a href="articles/mtg-20240413.html" class="article-card" data-genre="mtg">
+          <div class="card-inner">
+            <div class="card-meta">
+              <span class="card-genre genre-mtg">MTG</span>
+              <span class="card-date">2024/04/13 07:00</span>
+            </div>
+            <div class="card-title">【デマ注意】「MTG日本撤退」の誤情報が拡散</div>
+            <div class="card-excerpt">拡散された話題を公式否定。確認前の共有に注意。</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="about-panel">
+      <div>
+        <p class="section-kicker">ABOUT</p>
+        <h2>TCG LOGについて</h2>
+        <p>TCG LOGは、複数ジャンルのトレカ情報を見やすく整理するためのまとめサイトです。速報性よりも、読みやすさと真偽の切り分けを優先しています。</p>
+      </div>
+      <div class="about-note">
+        <strong>運営方針</strong>
+        <ul>
+          <li>更新は 9:00 / 15:00 / 21:00 の1日3回</li>
+          <li>「更新済み」の表示は実データに連動</li>
+          <li>相場・未確認情報は注意書きを明示</li>
+        </ul>
+      </div>
+    </section>
   </div>
 </main>
 
-<!-- フッター -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-inner">
       <div>
         <div class="logo-mark" style="margin-bottom:4px">TCG <span style="color:var(--accent)">LOG</span></div>
-        <div class="footer-copy">© 2024 TCG LOG. All rights reserved.</div>
+        <div class="footer-copy">© 2026 TCG LOG. All rights reserved.</div>
       </div>
       <div class="footer-links">
         <a href="/privacy.html">プライバシーポリシー</a>
@@ -283,7 +253,6 @@
 </footer>
 
 <script>
-  // フィルター機能
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.article-card');
 
@@ -298,27 +267,40 @@
     });
   });
 
-  // 更新スケジュール表示
-  const SCHEDULE = [7, 10, 12, 15, 18, 21, 24];
-  const now = new Date();
-  const h = now.getHours();
-  const list = document.getElementById('schedule-list');
+  async function loadSiteStatus() {
+    const statusText = document.getElementById('update-status-text');
+    const statusSub = document.getElementById('update-status-sub');
+    const SCHEDULE = ['09:00', '15:00', '21:00'];
 
-  if (list) {
-    list.innerHTML = SCHEDULE.map(t => {
-      const display = t === 24 ? '0:00' : `${t}:00`;
-      const done = h >= (t === 24 ? 0 : t) && !(t === 24 && h < 1);
-      const isNext = SCHEDULE.find(x => (x === 24 ? 0 : x) > h) === t;
-      const cls = done ? 'done' : isNext ? 'next' : 'upcoming';
-      const status = done ? '✓ 更新済' : isNext ? '◀ 次の更新' : '予定';
-      return `<div class="schedule-item ${cls}">
-        <span class="sch-time">${display}</span>
-        <span>${done ? '更新済み' : 'まとめ更新'}</span>
-        <span class="sch-status">${status}</span>
-      </div>`;
-    }).join('');
+    function nextSlot(now) {
+      const base = now.toISOString().slice(0, 10);
+      const candidates = SCHEDULE.map(t => new Date(`${base}T${t}:00+09:00`));
+      const upcoming = candidates.find(d => d > now);
+      if (upcoming) return upcoming;
+      const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+      const y = tomorrow.getFullYear();
+      const m = String(tomorrow.getMonth() + 1).padStart(2, '0');
+      const d = String(tomorrow.getDate()).padStart(2, '0');
+      return new Date(`${y}-${m}-${d}T09:00:00+09:00`);
+    }
+
+    try {
+      const res = await fetch('data/site-status.json', { cache: 'no-store' });
+      const data = await res.json();
+      const lastPublished = new Date(data.lastPublishedAt);
+      const now = new Date();
+      const next = nextSlot(now);
+      statusText.textContent = `最終反映: ${lastPublished.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}`;
+      statusSub.textContent = `次回自動更新予定: ${next.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} / 本日の更新枠: 9:00・15:00・21:00`;
+    } catch (error) {
+      const now = new Date();
+      const next = nextSlot(now);
+      statusText.textContent = '最終反映ファイルを取得できませんでした';
+      statusSub.textContent = `次回予定の目安: ${next.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}`;
+    }
   }
-</script>
 
+  loadSiteStatus();
+</script>
 </body>
 </html>
