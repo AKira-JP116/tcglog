@@ -1,0 +1,68 @@
+{
+  "site": {
+    "name": "TCG LOG",
+    "baseUrl": "https://tcglog.jp"
+  },
+  "sources": [
+    {
+      "id": "pokeka",
+      "name": "ポケモンカードゲーム",
+      "category": "ポケカ",
+      "official_home": "ADD_OFFICIAL_URL_HERE",
+      "list_url": "ADD_NEWS_OR_INFO_URL_HERE",
+      "item_selector": ".newsList li a",
+      "title_selector": null,
+      "url_attr": "href",
+      "summary_selector": null,
+      "limit": 5
+    },
+    {
+      "id": "yugioh",
+      "name": "遊戯王OCG",
+      "category": "遊戯王",
+      "official_home": "ADD_OFFICIAL_URL_HERE",
+      "list_url": "ADD_NEWS_OR_INFO_URL_HERE",
+      "item_selector": ".news-list a",
+      "title_selector": null,
+      "url_attr": "href",
+      "summary_selector": null,
+      "limit": 5
+    },
+    {
+      "id": "onepiece",
+      "name": "ワンピースカードゲーム",
+      "category": "ワンピース",
+      "official_home": "ADD_OFFICIAL_URL_HERE",
+      "list_url": "ADD_NEWS_OR_INFO_URL_HERE",
+      "item_selector": "article a",
+      "title_selector": null,
+      "url_attr": "href",
+      "summary_selector": null,
+      "limit": 5
+    },
+    {
+      "id": "duema",
+      "name": "デュエル・マスターズ",
+      "category": "デュエマ",
+      "official_home": "ADD_OFFICIAL_URL_HERE",
+      "list_url": "ADD_NEWS_OR_INFO_URL_HERE",
+      "item_selector": ".news a",
+      "title_selector": null,
+      "url_attr": "href",
+      "summary_selector": null,
+      "limit": 5
+    },
+    {
+      "id": "mtg",
+      "name": "マジック：ザ・ギャザリング",
+      "category": "MTG",
+      "official_home": "ADD_OFFICIAL_URL_HERE",
+      "list_url": "ADD_NEWS_OR_INFO_URL_HERE",
+      "item_selector": "article a",
+      "title_selector": null,
+      "url_attr": "href",
+      "summary_selector": null,
+      "limit": 5
+    }
+  ]
+}
