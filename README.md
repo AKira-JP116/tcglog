@@ -1,43 +1,52 @@
-# TCG LOG 改修版
+# TCG LOG 自動生成版
 
-## 今回の変更点
-- 更新頻度を **9:00 / 15:00 / 21:00** に整理
-- トップページを **最新まとめが主役** の構成に変更
-- 「更新済みっぽく見せるだけ」の表示をやめ、`data/site-status.json` の実データを表示
-- GitHub Actions で **指定時刻に自動更新処理** を実行
+## できること
+- 毎日 **9:00 / 15:00 / 21:00** に GitHub Actions が起動
+- `data/content_queue.json` を読んで **記事HTMLを自動生成**
+- 同時に **トップページ `index.html`** を再生成
+- 同時に **`sitemap.xml`** を再生成
+- `data/site-status.json` と `data/latest.json` も更新
 
-## 追加ファイル
-- `index.html`
-- `css/style.css`
-- `data/site-status.json`
-- `data/latest.json`
-- `scripts/render_status.py`
-- `.github/workflows/tcglog-scheduled-update.yml`
+## 更新の流れ
+1. `data/content_queue.json` に記事データを入れる
+2. Actions が `scripts/generate_site.py` を実行
+3. 以下が自動更新される
+   - `articles/*.html`
+   - `index.html`
+   - `sitemap.xml`
+   - `data/site-status.json`
+   - `data/latest.json`
 
-## 自動更新の意味
-この実装で自動化されるのは、まず **サイトの更新ステータス反映** です。
+## 重要ポイント
+この版は **記事ページ生成とサイトマップ更新まで自動化** しています。
+ただし、記事内容の元データは `content_queue.json` に入る前提です。
 
-- 毎日 JST 9:00 / 15:00 / 21:00 に GitHub Actions が起動
-- `scripts/render_status.py` が `data/site-status.json` を更新
-- トップページがその時刻を読み込んで「最終反映時刻」「次回自動更新予定」を表示
+つまり、完全自動にするには次のどちらかを後で追加します。
+- APIやスクレイピングで `content_queue.json` を自動生成
+- ChatGPTや別スクリプトで `content_queue.json` を更新
 
-## 記事そのものも自動生成したい場合
-次のどちらかを追加してください。
+## content_queue.json の役割
+ここが編集部の原稿置き場です。1件ごとに次の情報を持ちます。
+- slug
+- title
+- description
+- category
+- genre
+- publishedAt
+- tags
+- sections
 
-1. 外部APIやスクレイピングで記事データを集める
-2. `scripts/` に記事生成スクリプトを追加し、HTMLとsitemapを更新する
+## 導入手順
+1. 既存リポジトリに以下を追加
+   - `css/style.css`
+   - `scripts/generate_site.py`
+   - `data/content_queue.json`
+   - `.github/workflows/tcglog-auto-generate.yml`
+2. 一度ローカルまたは Actions で `python scripts/generate_site.py` を実行
+3. 生成された `index.html` `articles/*.html` `sitemap.xml` を確認
+4. GitHub Pages に反映
 
-今の構成は、そのための土台です。
-
-## GitHub へ反映する手順
-1. 既存の `index.html` を今回の `index.html` で置き換え
-2. 既存の `css/style.css` を今回の `css/style.css` で置き換え
-3. `data/` `scripts/` `.github/workflows/` を追加
-4. push 後、GitHub の Actions タブで workflow が有効か確認
-
-## 注意
-GitHub Actions の `schedule` は UTC 基準です。
-このファイルでは JST に合わせて以下に設定済みです。
-- `0 0 * * *` → 9:00 JST
-- `0 6 * * *` → 15:00 JST
-- `0 12 * * *` → 21:00 JST
+## 補足
+- GitHub Actions の cron は UTC 基準です
+- この workflow は JST 9:00 / 15:00 / 21:00 に合わせて設定済みです
+- 以前の `render_status.py` 単体更新 workflow は不要なら外してOKです

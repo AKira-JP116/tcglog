@@ -1,5 +1,11 @@
 {
   "lastPublishedAt": "2026-04-15T21:00:00+09:00",
-  "schedule": ["09:00", "15:00", "21:00"],
-  "timezone": "Asia/Tokyo"
+  "generatedAt": "2026-04-15T17:56:23.806965+09:00",
+  "schedule": [
+    "09:00",
+    "15:00",
+    "21:00"
+  ],
+  "timezone": "Asia/Tokyo",
+  "nextScheduledAtLabel": "2026/04/15 21:00 JST"
 }
